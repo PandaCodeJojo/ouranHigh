@@ -1,7 +1,9 @@
 class CreateCourses < ActiveRecord::Migration[5.2]
   def change
     create_table :courses do |t|
-
+      t.string :name
+      t.belongs_to :cohort, index: true
+      t.integer :total_hours
       t.timestamps
     end
   end

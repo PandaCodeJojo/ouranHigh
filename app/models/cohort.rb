@@ -1,4 +1,4 @@
 class Cohort < ApplicationRecord
-    has_many :students
-    has_many :instructors
+    has_many :student
+    has_many :instructor
 end

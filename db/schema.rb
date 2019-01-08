@@ -14,38 +14,44 @@ ActiveRecord::Schema.define(version: 2019_01_07_212433) do
 
   create_table "cohorts", force: :cascade do |t|
     t.string "name"
-    t.string "instructor"
-    t.string "start_date"
-    t.string "end_date"
-    t.integer "cohort_attendees"
+    t.integer "instructor_id"
+    t.date "start_date"
+    t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["instructor_id"], name: "index_cohorts_on_instructor_id"
   end
 
   create_table "courses", force: :cascade do |t|
+    t.string "name"
+    t.integer "cohort_id"
+    t.integer "total_hours"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["cohort_id"], name: "index_courses_on_cohort_id"
   end
 
   create_table "instructors", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.string "cohort"
+    t.integer "cohort_id"
     t.integer "age"
     t.string "highest_education_completed"
-    t.string "salary"
+    t.integer "salary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["cohort_id"], name: "index_instructors_on_cohort_id"
   end
 
   create_table "students", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.string "cohort"
+    t.integer "cohort_id"
     t.integer "age"
     t.string "highest_education_completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["cohort_id"], name: "index_students_on_cohort_id"
   end
 
   create_table "users", force: :cascade do |t|
