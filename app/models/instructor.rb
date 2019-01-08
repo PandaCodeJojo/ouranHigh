@@ -1,5 +1,5 @@
 class Instructor < ApplicationRecord
-    has_many :cohort
+    has_many :cohorts
 
     validates :salary, presence:true, numericality: { only_integer: true, greater_than: 0 }
 
