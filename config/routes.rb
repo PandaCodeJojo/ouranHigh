@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'instructors/index'
+  get 'courses/index'
+  get 'students/index'
+  get 'cohorts/index'
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
 
