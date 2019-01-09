@@ -1,15 +1,14 @@
 <h1>Pages#launch_center</h1>
-<form action="/signup" method="post">
-    Username: <input type="text" name="user_name"><br>
-    Email: <input type="text" name="email"><br>
-    Password: <input type="password" name="password"><br>
-<input type="submit" value="Submit">
-</form>
-<br>
+<% if signed_in? %>
+      Signed in as: <%= current_user.email %>
+      <%= button_to 'Sign out', sign_out_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Sign in', sign_in_path %>
+    <% end %>
 
-<form action="/login" method="post">
-Email: <input type="text" name="email"><br>
-password: <input type="password" name="password"><br>
-<input type="submit" value="Submit">
-</form>
+    <div id="flash">
+      <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
+    </div>
 <p>Find me in app/views/pages/launch_center.html.erb</p>
