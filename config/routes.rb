@@ -18,5 +18,8 @@ Rails.application.routes.draw do
   get 'sessions/new'
   root to: "pages#launch_center"
   get '/student_portal', to: 'pages#student_portal'
+  get '/instructor_portal', to: 'pages#instructor_portal'
+  get '/course_portal', to: 'pages#course_portal'
+  get '/cohort_portal', to: 'pages#cohort_portal'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

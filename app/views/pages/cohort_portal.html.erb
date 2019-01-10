@@ -1,0 +1,36 @@
+<h1> Cohort Portal</h1>
+<div>
+  <%= form_tag("/cohort/create", method: "post") do %>
+    <%= text_field(:cohort, :name, placeholder: "Cohort Name") %>
+    <%= text_field(:cohort, :start_date, placeholder: "Start Date") %>
+    <%= text_field(:cohort, :end_date, placeholder: "End Date") %>
+  <% end %>
+</div>
+<br>
+<br>
+<div class="full half-500 third-800">
+  <table class="primary">
+    <thead>
+      <tr>
+        
+        <th>Cohort Name</th>
+        <th> Start Date</th>
+        <th> End Date</th>
+        <th> </th>
+        <th> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @all_cohorts.each do |cohorts| %>
+      <tr>
+        <td><%= cohorts.name %></td>
+        <td><%= cohorts.start_date %></td>
+        <td><%= cohorts.end_date %></td>
+        <td><button class='success'>Success</button></td>
+        <td><button class='error'>Success</button></td>
+        </tr>
+      
+    <% end %>
+    </tbody>
+  </table>
+</div>

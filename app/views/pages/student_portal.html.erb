@@ -1,9 +1,30 @@
-<div>
 <h1> Student Portal</h1>
-<%= form_tag("/student/create", method: "post") do %>
+<div>
+  <%= form_tag("/student/create", method: "post") do %>
     <%= text_field(:student, :first_name, placeholder: "First Name") %>
     <%= text_field(:student, :last_name, placeholder: "Last Name") %>
     <%= text_field(:student, :age, placeholder: "age") %>
   <% end %>
-  
+</div>
+<br>
+<div>
+  <table class="primary">
+    <thead>
+      <tr>
+        
+        <th>First Name</th>
+        <th> Last Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @all_students.each do |students| %>
+      <tr>
+        <td><%= students.first_name %></td>
+        <td><%= students.last_name %></td>
+        <td><%= students.age %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 </div>
