@@ -22,4 +22,8 @@ Rails.application.routes.draw do
   get '/course_portal', to: 'pages#course_portal'
   get '/cohort_portal', to: 'pages#cohort_portal'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+resources :students
+resources :cohorts
+resources :courses
+resources :instructors
 end

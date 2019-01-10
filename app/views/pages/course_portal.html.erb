@@ -9,13 +9,15 @@
 </div>
 <br>
 <br>
-<div>
+<div class="tab">
   <table class="primary">
     <thead>
       <tr>
         
         <th>Course Name</th>
         <th> Total Hours</th>
+        <th> </th>
+        <th> </th>
       </tr>
     </thead>
     <tbody>
@@ -23,6 +25,8 @@
       <tr>
         <td><%= courses.name %></td>
         <td><%= courses.total_hours %></td>
+        <td><button class='success'>Success</button></td>
+        <td><button class='error'>Success</button></td>
       </tr>
     <% end %>
     </tbody>
