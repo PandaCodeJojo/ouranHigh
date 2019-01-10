@@ -4,5 +4,7 @@ class PagesController < ApplicationController
         User.create(username:params[:user_name], email:params[:email], password:params[:password])
     end
   end
+  def student_portal
+  end
 end
 

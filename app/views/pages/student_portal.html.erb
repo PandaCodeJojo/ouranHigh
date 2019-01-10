@@ -1,0 +1,9 @@
+<div>
+<h1> Student Portal</h1>
+<%= form_tag("/student/create", method: "post") do %>
+    <%= text_field(:student, :first_name, placeholder: "First Name") %>
+    <%= text_field(:student, :last_name, placeholder: "Last Name") %>
+    <%= text_field(:student, :age, placeholder: "age") %>
+  <% end %>
+  
+</div>
