@@ -4,6 +4,7 @@
     <%= text_field(:cohort, :name, placeholder: "Cohort Name") %>
     <%= text_field(:cohort, :start_date, placeholder: "Start Date") %>
     <%= text_field(:cohort, :end_date, placeholder: "End Date") %>
+    <button class="ui primary button">Save</button>
   <% end %>
 </div>
 <br>
@@ -16,7 +17,9 @@
         <th>Cohort Name</th>
         <th> Start Date</th>
         <th> End Date</th>
-        <th> </th>
+        <th><button class="ui primary button">
+        Save
+      </button> </th>
         <th> </th>
       </tr>
     </thead>
@@ -27,10 +30,23 @@
         <td><%= cohorts.start_date %></td>
         <td><%= cohorts.end_date %></td>
         <td><button class='success'>Success</button></td>
-        <td><button class='error'>Success</button></td>
+        <td><%= link _to 'Rmv_Cohort'button class='error'>Success</button></td>
         </tr>
-      
+        <button class="ui secondary button">
+        Okay
+      </button>
+      <button class="ui button">
+        Cancel
+      </button>
     <% end %>
     </tbody>
   </table>
 </div>
+
+
+<button class="ui primary button">
+  Save
+</button>
+<button class="ui button">
+  Discard
+</button>

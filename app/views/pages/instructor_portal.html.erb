@@ -4,7 +4,7 @@
     <%= text_field(:instructor, :first_name, placeholder: "First Name") %>
     <%= text_field(:instructor, :last_name, placeholder: "Last Name") %>
     <%= text_field(:instructor, :age, placeholder: "age") %>
-    <button class='success'>Employ</button>
+    <button class="ui primary button">Save</button>
   <% end %>
 </div>
 <br>
@@ -30,10 +30,12 @@
         <td><%= instructors.age %></td>
         <td><%= instructors.highest_education_completed %></td>
         <td><%= instructors.salary %></td>
-        <td><button class='success'>Edit</button></td>
-        <td><button class='error'>Fire</button></td>
+        <td><%= link_to 'button class="ui primary button">Edit</button></td>
+        <td><button class="ui secondary button">Delete</button></td>
       </tr>
     <% end %>
     </tbody>
   </table>
 </div>
+
+
